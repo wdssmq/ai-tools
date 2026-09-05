@@ -1,3 +1,6 @@
 .history/
+diff-*/
 diff/*
+
+# 保留
 !diff/.gitkeep
