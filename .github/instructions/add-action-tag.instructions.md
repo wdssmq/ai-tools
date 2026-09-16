@@ -28,3 +28,10 @@ git log -1 --oneline --decorate HEAD
 ```
 
 7. 汇报实际分析得到的版本号、目标提交、创建或移动的 tag，以及校验命令输出的关键结果；如果工作区有未提交修改或版本号无法可靠判断，不执行 tag 操作。
+
+8. 推送新添加的完整版本 tag，并强制更新主版本 tag：
+
+```bash
+git push origin v1.0.0 && git push origin +v1
+
+```
