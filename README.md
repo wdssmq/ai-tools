@@ -8,6 +8,9 @@
 
 ## 内容
 
+- `apply-global-agent-constraints.instructions.md`：将本仓库中维护的全局 Agent 约束模板安装或更新到当前用户的 VS Code 用户级配置；
+    - 编辑 `.github/templates/global-agent-constraints.instructions.md` 中的“约束”章节，作为唯一维护来源；
+    - 使用“应用全局 Agent 约束”指令会先比较用户设备中的同名文件，有差异时展示 diff 并在确认后更新；
 - `git-merge-pick.instructions.md`：从本地忽略配置读取目标仓库，辅助 Git 分支合并和 cherry-pick，并在执行前后进行安全检查；
     - `code .git-local/git-repository.path`：编辑本地仓库路径配置文件；
     - 写入目标 Git 仓库路径的绝对路径供指令读取使用；
