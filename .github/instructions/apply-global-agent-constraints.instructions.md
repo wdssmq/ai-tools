@@ -10,6 +10,7 @@ description: "将本仓库维护的全局 Agent 约束安装或更新到当前�
 
 1. 先读取源模板，验证它包含 YAML front matter、非空 `description`，以及 `applyTo: "**"`。
 2. 默认使用 `~\AppData\Roaming\Code\User\prompts` 作为 VS Code 用户级提示文件目录。将 `~` 解析为当前用户的主目录，并展示解析后的绝对路径。
+3. 对于 CodeBuddy，使用 `~\.codebuddy\rules\` 目录，用户明确提及 `CodeBuddy` 时，同时为两者配置约束，否则只针对 VSCode；
 3. 在读取或写入目标文件前，要求用户最终确认该目录；用户提供其他目录时，使用用户提供的绝对路径。未获确认不得继续。
 4. 目标文件必须为 `<已确认目录>\global-agent-constraints.instructions.md`。不得修改该目录中的任何其他文件。
 
