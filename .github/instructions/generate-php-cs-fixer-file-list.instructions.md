@@ -13,7 +13,7 @@ applyTo: "**"
 4. 排除 `.gitkeep`、`list.md`；
 5. 不要在清单中写入目录、绝对路径、空行、编号或额外说明；
 6. 写入后，将 `list.md` 中的路径与实际扫描结果逐项比较，确认路径完整、无重复且不含已排除项；
-7. `list.md` 生成或更新后，输出一条可直接复制到 Git Bash 执行的命令：先切换到这些相对路径所对应的实际项目根目录，再使用 `mapfile` 将 `list.md` 读入数组，并将全部文件路径传给 `vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php`；
+7. `list.md` 生成或更新后，输出一条可直接复制到 Git Bash 执行的命令：先切换到用户指定的实际项目根目录，再使用 `mapfile` 将 `list.md` 读入数组，并将全部文件路径传给 `vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php`；未指定项目根目录时，先询问用户，不要根据目标目录猜测；
 8. 命令中的 `list.md` 必须使用其绝对 Git Bash 路径，即将 Windows 盘符路径转换为 `/盘符小写/其余路径` 的形式；路径含空格时必须加双引号；
 
 每次生成或更新清单后，使用实际路径替换下列占位符，并输出替换完成、可直接执行的命令：
@@ -22,4 +22,4 @@ applyTo: "**"
 cd "<实际项目根目录>" && mapfile -t files < "<list.md 的绝对 Git Bash 路径>" && vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php "${files[@]}"
 ```
 
-输出命令前先确认清单中的相对路径以该项目根目录为基准。
+目标目录可以是独立的文件副本目录，不必与实际项目根目录相同。输出命令前，先确认项目根目录中存在 `.php-cs-fixer.dist.php` 和 `vendor/bin/php-cs-fixer`，且清单中的每条相对路径在该项目根目录下均对应文件；不满足时说明问题，不输出命令。
