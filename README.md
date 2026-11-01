@@ -20,3 +20,13 @@
 ## Skills
 
 - `mz_skills/zbp-app-lint-template/`：将 `zbp-app-lint` 仓库中的 Z-BlogPHP 应用模板安装到用户指定的应用仓库目录；模板副本保存在该技能的 `assets/zbp-app-template/` 中。
+
+
+```sh
+# 查找可用技能
+pnpm dlx skills add wdssmq/ai-tools --list
+
+# 安装指定技能
+pnpm dlx skills add wdssmq/ai-tools --skill zbp-app-lint-template
+
+```
