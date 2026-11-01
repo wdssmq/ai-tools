@@ -16,3 +16,7 @@
     - 写入目标 Git 仓库路径的绝对路径供指令读取使用；
 - `generate-php-cs-fixer-file-list.instructions.md`：递归生成 PHP-CS-Fixer 文件清单，并提供可直接执行的 Git Bash 命令；
     - 使用 BCompare 比较项目文件，将有差异的文件复制至 `diff/` 目录，使用指令对原项目中的相应文件执行 PHP-CS-Fixer 检查；
+
+## Skills
+
+- `mz_skills/zbp-app-lint-template/`：将 `zbp-app-lint` 仓库中的 Z-BlogPHP 应用模板安装到用户指定的应用仓库目录；模板副本保存在该技能的 `assets/zbp-app-template/` 中。
